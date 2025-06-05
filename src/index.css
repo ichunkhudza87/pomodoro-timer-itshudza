@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #f43f5e;
+  --color-secondary: #3b82f6;
+  --color-accent: #a855f7;
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-text: #334155;
+  --font-main: Inter, system-ui, sans-serif;
+}
+
+/* Tailwind customization for theme colors */
+@layer base {
+  :root {
+    --primary-100: theme('colors.rose.100');
+    --primary-200: theme('colors.rose.200');
+    --primary-300: theme('colors.rose.300');
+    --primary-400: theme('colors.rose.400');
+    --primary-500: theme('colors.rose.500');
+    --primary-600: theme('colors.rose.600');
+    --primary-700: theme('colors.rose.700');
+    --primary-800: theme('colors.rose.800');
+    --primary-900: theme('colors.rose.900');
+    
+    --secondary-100: theme('colors.blue.100');
+    --secondary-200: theme('colors.blue.200');
+    --secondary-300: theme('colors.blue.300');
+    --secondary-400: theme('colors.blue.400');
+    --secondary-500: theme('colors.blue.500');
+    --secondary-600: theme('colors.blue.600');
+    --secondary-700: theme('colors.blue.700');
+    --secondary-800: theme('colors.blue.800');
+    --secondary-900: theme('colors.blue.900');
+    
+    --accent-100: theme('colors.purple.100');
+    --accent-200: theme('colors.purple.200');
+    --accent-300: theme('colors.purple.300');
+    --accent-400: theme('colors.purple.400');
+    --accent-500: theme('colors.purple.500');
+    --accent-600: theme('colors.purple.600');
+    --accent-700: theme('colors.purple.700');
+    --accent-800: theme('colors.purple.800');
+    --accent-900: theme('colors.purple.900');
+  }
+}
+
+/* Tailwind color utilities for dynamic theme */
+.bg-primary {
+  background-color: var(--color-primary);
+}
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+.bg-accent {
+  background-color: var(--color-accent);
+}
+.bg-surface {
+  background-color: var(--color-surface);
+}
+.bg-background {
+  background-color: var(--color-background);
+}
+.text-primary {
+  color: var(--color-primary);
+}
+.text-secondary {
+  color: var(--color-secondary);
+}
+.text-accent {
+  color: var(--color-accent);
+}
+.text-text {
+  color: var(--color-text);
+}
+
+/* Transitions */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Smooth input focus styles */
+input:focus, select:focus {
+  outline-color: var(--color-primary);
+  transition: outline-color 0.2s ease;
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 5px;
+  background-image: linear-gradient(var(--color-primary), var(--color-primary));
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  cursor: pointer;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+/* Animation for timer */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.timer-active {
+  animation: pulse 2s infinite ease-in-out;
+}
